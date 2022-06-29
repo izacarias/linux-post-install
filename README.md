@@ -31,6 +31,8 @@ sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=P
  - Inkscape
  - The Gimp
  - Gnome Extensions
+ - Gutenprint CUPS
+ - Foomatic
 
 ```
 sudo dnf install -y telegram-desktop
@@ -38,6 +40,10 @@ sudo dnf install -y keepassxc
 sudo dnf install -y inkscape
 sudo dnf install -y gimp
 sudo dnf install -y gnome-extensions-app
+sudo dnf install -y gutenprint-cups
+sudo dnf install -y foomatic
+sudo dnf install -y crontabs
+sudo dnf install -y rclone
 ```
 
 #### From Flathub (🤮)
@@ -51,3 +57,5 @@ sudo flatpak install flathub im.riot.Riot
 ## Gnome Extensions
  - https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
  - https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/
+
+## Set CloudStorage synchronization
