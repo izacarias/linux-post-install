@@ -23,22 +23,24 @@ sudo dnf groupupdate -y core
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 ```
 
-## Software
+### Software
 
-### From RPMs
+#### From RPMs
  - Telegram
  - Kee Pass XC
  - Inkscape
  - The Gimp
+ - Gnome Extensions
 
 ```
 sudo dnf install -y telegram-desktop
 sudo dnf install -y keepassxc
 sudo dnf install -y inkscape
 sudo dnf install -y gimp
+sudo dnf install -y gnome-extensions-app
 ```
 
-### From Flathub (🤮)
+#### From Flathub (🤮)
  - Element Desktop
  
 ```
@@ -46,6 +48,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak remote-modify --enable flathub
 sudo flatpak install flathub im.riot.Riot
 ```
-
 ## Gnome Extensions
-
+ - https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+ - https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/
