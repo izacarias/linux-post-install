@@ -1,6 +1,18 @@
 # linux-post-install
 Set of notes to facilitate the post install process
 
+## General
+ - Add SSH keys to SSH Agent
+```
+# Fix SSH key permissions
+sudo chown -R zaca:zaca ~/.ssh/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
+
+eval $(ssh-agent)
+ssh-add ~/.ssh/{id_rsa,id_ed25519}
+```
+
 ## Fedora
 
  - Enable the RPM Fusion Repository, AppStream Metadata and enable Multimedia Codecs
@@ -36,3 +48,4 @@ sudo flatpak install flathub im.riot.Riot
 ```
 
 ## Gnome Extensions
+
