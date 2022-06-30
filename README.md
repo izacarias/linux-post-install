@@ -57,5 +57,14 @@ sudo flatpak install flathub im.riot.Riot
 ## Gnome Extensions
  - https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
  - https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/
+ 
+## Gnome Shortcuts
+```
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Gnome Terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'gnome-terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Control><Alt>t'
+```
 
 ## Set CloudStorage synchronization
+TODO
