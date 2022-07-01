@@ -44,6 +44,8 @@ sudo dnf install -y gutenprint-cups
 sudo dnf install -y foomatic
 sudo dnf install -y crontabs
 sudo dnf install -y rclone
+sudo dnf install -y vim-X11
+
 ```
 
 #### From Flathub (🤮)
