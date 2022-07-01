@@ -1,4 +1,4 @@
-# linux-post-install
+# Fedora Linux Post Install Procedures
 Set of notes to facilitate the post install process
 
 ## General
