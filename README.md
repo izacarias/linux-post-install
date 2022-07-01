@@ -15,6 +15,14 @@ ssh-add ~/.ssh/{id_rsa,id_ed25519}
 
 ## Fedora
 
+```
+# Improving DNF donwload performance
+echo '' | sudo tee -a /etc/dnf/dnf.conf
+echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+echo 'fastestmirror=True' | sudo tee -a /etc/dnf/dnf.conf
+echo 'deltarpm=True' | sudo tee -a /etc/dnf/dnf.conf
+```
+
  - Enable the RPM Fusion Repository, AppStream Metadata and enable Multimedia Codecs
 ```
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
@@ -111,7 +119,7 @@ TODO
 ```
 # Autocomplete
 echo '' >> /etc/bash.bashrc
-echo '# Autocompletar extra' >> /etc/bash.bashrc
+echo '# Extra autocomplete' >> /etc/bash.bashrc
 echo 'if ! shopt -oq posix; then' >> /etc/bash.bashrc
 echo '  if [ -f /usr/share/bash-completion/bash_completion ]; then' >> /etc/bash.bashrc
 echo '    . /usr/share/bash-completion/bash_completion' >> /etc/bash.bashrc
