@@ -80,6 +80,22 @@ wget -q -O - https://gist.githubusercontent.com/Blastoise/64ba4acc55047a53b680c1
 wget -q -O - https://gist.githubusercontent.com/Blastoise/d959d3196fb3937b36969013d96740e0/raw/429d8882b7c34e5dbd7b9cbc9d0079de5bd9e3aa/otherFonts.sh | bash
 ```
 
+#### Fixing bad rendering of Bitmap fonts
+```
+mkdir -p ~/.config/fontconfig
+cat > ~/.config/fontconfig/fonts.conf << EOL
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <match target="font">
+    <edit name="embeddedbitmap" mode="assign">
+      <bool>false</bool>
+    </edit>
+  </match>
+</fontconfig>
+EOL
+```
+
 ### LaTeX from TU Braunschweig
 ```
 sudo dnf install -y texlive-scheme-full
