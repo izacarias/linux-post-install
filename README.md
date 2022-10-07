@@ -97,7 +97,9 @@ cd ~/Downloads
 wget -c https://packages.gurobi.com/9.5/gurobi9.5.2_linux64.tar.gz
 sudo tar -xzvf gurobi9.5.2_linux64.tar.gz -C /opt
 sudo ln -s /opt/gurobi952 /opt/gurobi
+sudo chcon -t textrel_shlib_t /opt/gurobi/linux64/lib/libgurobi95.so
 ```
+To test the installation, simply type `gurobi.sh`.
 
 ## Distro Specific Notes
 
