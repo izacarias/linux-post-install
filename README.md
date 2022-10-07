@@ -66,6 +66,39 @@ echo '' >> ~/.bashrc
 source .bashrc 
 ```
 
+# Java
+
+## OpenJDK
+```
+cd ~/Downloads
+wget -c https://download.java.net/java/GA/jdk19/877d6127e982470ba2a7faa31cc93d04/36/GPL/openjdk-19_linux-x64_bin.tar.gz
+sudo tar -xzvf openjdk-19_linux-x64_bin.tar.gz -C /opt
+sudo ln -s /opt/jdk-19 /opt/java
+```
+
+## Maven
+```
+cd ~/Downloads
+wget -c https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+sudo tar -xzvf apache-maven-3.8.6-bin.tar.gz -C /opt
+sudo ln -s /opt/apache-maven-3.8.6 /opt/maven
+```
+
+# GO
+```
+cd ~/Downloads/
+wget -c https://go.dev/dl/go1.19.2.linux-amd64.tar.gz
+sudo tar -xzvf go1.19.2.linux-amd64.tar.gz -C /opt
+```
+
+# Gurobi
+```
+cd ~/Downloads
+wget -c https://packages.gurobi.com/9.5/gurobi9.5.2_linux64.tar.gz
+sudo tar -xzvf gurobi9.5.2_linux64.tar.gz -C /opt
+sudo ln -s /opt/gurobi952 /opt/gurobi
+```
+
 ## Distro Specific Notes
 
  - [Fedora](Fedora.md)
