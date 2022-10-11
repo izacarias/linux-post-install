@@ -113,6 +113,50 @@ cat > ~/.config/fontconfig/fonts.conf << EOL
 EOL
 ```
 
+### Samba
+Installing Samba to use a shared folder for the printer / scanner.
+
+#### Installing Samba
+```
+sudo dnf install samba
+FWZONE=`firewall-cmd --get-active-zones | head -n 1`
+sudo firewall-cmd --permanent --zone=$FWZONE --add-service=samba
+sudo firewall-cmd --reload
+```
+
+#### Sharing a folder
+```
+sudo smbpasswd -a $USER
+mkdir -v -p ~/Public
+sudo semanage fcontext --add --type "samba_share_t" "/home/zaca/Public(/.*)?"
+sudo restorecon -R ~/Public
+sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.old
+
+cat << EOF | sudo tee -a /etc/samba/smb.conf
+[global]
+        workgroup = SAMBA
+        security = user
+        passdb backend = tdbsam
+        printing = cups
+        printcap name = cups
+        load printers = yes
+        cups options = raw
+
+[public]
+        comment = Public
+        path = /home/zaca/Public
+        writeable = yes
+        browseable = yes
+        public = yes
+        create mask = 0644
+        directory mask = 0755
+        write list = user
+
+EOF
+sudo systemctl restart smb
+```
+
+
 ### LaTeX from TU Braunschweig
 LaTeX classes from TU Braunschweig
 ```
