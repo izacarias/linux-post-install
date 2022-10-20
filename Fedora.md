@@ -162,6 +162,10 @@ LaTeX classes from TU Braunschweig
 ```
 sudo dnf install -y texlive-scheme-full
 sudo dnf install -y BibTool
+sudo dnf install texlive-base texlive-extra \
+     texlive-collection-fontsextra texlive-collection-fontsrecommended \
+     texlive-collection-genericrecommended texlive-collection-langgerman \
+     texlive-collection-fontutils texlive-cm-super
 ```
 
  - Download the file from [here](https://www.tu-braunschweig.de/index.php?eID=dumpFile&t=f&f=116123&token=de986a15c2ede06cdc057c43fc20a539ed043265)
