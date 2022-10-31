@@ -55,7 +55,7 @@ echo '  fi' >> /etc/bash.bashrc
 echo 'fi' >> /etc/bash.bashrc
 
 # Function to get BibTeX from DOI
-echo '' >> ~/.bashrc
+echo '' >> ~/.bashrc.d/getdoi.conf
 echo '# Get BibTex from DOI' >> ~/.bashrc
 echo 'getdoi() {' >> ~/.bashrc
 echo '    ENTRY=`/usr/bin/curl -s -L -H "Accept: text/bibliography; style=bibtex" -A "mailto:myemail@domain.com" https://doi.org/$1`' >> ~/.bashrc
