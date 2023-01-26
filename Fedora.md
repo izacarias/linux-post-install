@@ -59,6 +59,29 @@ sudo dnf install -y fedy
 sudo dnf install -y https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm
 ```
 
+ - VS Codium
+```
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
+sudo dnf install codium
+```
+ - VS Codium Extensions
+```
+codium --install-extension alefragnani.project-manager
+codium --install-extension DotJoshJohnson.xml
+codium --install-extension James-Yu.latex-workshop
+codium --install-extension Pivotal.vscode-boot-dev-pack
+codium --install-extension Pivotal.vscode-spring-boot
+codium --install-extension redhat.java
+codium --install-extension vscjava.vscode-java-debug
+codium --install-extension vscjava.vscode-java-dependency
+codium --install-extension vscjava.vscode-java-pack
+codium --install-extension vscjava.vscode-java-test
+codium --install-extension vscjava.vscode-maven
+codium --install-extension vscjava.vscode-spring-boot-dashboard
+codium --install-extension vscjava.vscode-spring-initializr
+```
+
 ### From Flathub (🤮)
  - Element Desktop
  
