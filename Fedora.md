@@ -137,10 +137,11 @@ EOL
 ```
 
 #### ‼️‼️ Optional (Replace Cambria and Calibri by Caladea and Carlito)
+
 - Cambria
 ```
-mkdir -p ~/.config/fontconfig
-cat > /etc/fonts/conf.d/30-0-google-carlito-fonts.conf << EOL
+mkdir -p ~/.config/fontconfig/conf.d
+cat > ~/.config/fontconfig/conf.d/30-0-google-carlito-fonts.conf << EOL
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
   <fontconfig>
@@ -160,10 +161,11 @@ cat > /etc/fonts/conf.d/30-0-google-carlito-fonts.conf << EOL
   </fontconfig>
 EOL
 ```
+
 - Calibri
 ```
-mkdir -p ~/.config/fontconfig
-cat > /etc/fonts/conf.d/30-0-google-caladea-fonts.conf << EOL
+mkdir -p ~/.config/fontconfig/conf.d
+cat > ~/.config/fontconfig/conf.d/30-0-google-caladea-fonts.conf << EOL
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
   <fontconfig>
