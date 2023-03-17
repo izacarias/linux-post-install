@@ -122,8 +122,8 @@ wget -q -O - https://gist.githubusercontent.com/Blastoise/d959d3196fb3937b369690
 
  - Fixing bad rendering of Bitmap fonts
 ```
-mkdir -p ~/.config/fontconfig
-cat > ~/.config/fontconfig/20-no-embedded.conf << EOL
+mkdir -p ~/.config/fontconfig/conf.d
+cat > ~/.config/fontconfig/conf.d/20-no-embedded.conf << EOL
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
 <fontconfig>
