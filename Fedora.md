@@ -123,9 +123,9 @@ wget -q -O - https://gist.githubusercontent.com/Blastoise/d959d3196fb3937b369690
  - Fixing bad rendering of Bitmap fonts
 ```
 mkdir -p ~/.config/fontconfig
-cat > ~/.config/fontconfig/fonts.conf << EOL
+cat > ~/.config/fontconfig/20-no-embedded.conf << EOL
 <?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
 <fontconfig>
   <match target="font">
     <edit name="embeddedbitmap" mode="assign">
@@ -133,6 +133,54 @@ cat > ~/.config/fontconfig/fonts.conf << EOL
     </edit>
   </match>
 </fontconfig>
+EOL
+```
+
+#### ‼️‼️ Optional (Replace Cambria and Calibri by Caladea and Carlito)
+- Cambria
+```
+mkdir -p ~/.config/fontconfig
+cat > /etc/fonts/conf.d/30-0-google-carlito-fonts.conf << EOL
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+  <fontconfig>
+    <!-- Microsoft -->
+    <alias binding="same">
+      <family>Cambria</family>
+      <accept>
+        <family>Caladea</family>
+      </accept>
+    </alias>
+    <alias binding="same">
+      <family>Caladea</family>
+      <default>
+        <family>Cambria</family>
+      </default>
+    </alias>
+  </fontconfig>
+EOL
+```
+- Calibri
+```
+mkdir -p ~/.config/fontconfig
+cat > /etc/fonts/conf.d/30-0-google-caladea-fonts.conf << EOL
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+  <fontconfig>
+    <!-- Microsoft -->
+    <alias binding="same">
+      <family>Calibri</family>
+      <accept>
+        <family>Carlito</family>
+      </accept>
+    </alias>
+    <alias binding="same">
+      <family>Carlito</family>
+      <default>
+        <family>Calibri</family>
+      </default>
+    </alias>
+  </fontconfig>
 EOL
 ```
 
