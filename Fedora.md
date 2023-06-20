@@ -67,19 +67,19 @@ sudo dnf install codium
 ```
  - VS Codium Extensions
 ```
-codium --install-extension alefragnani.project-manager
-codium --install-extension DotJoshJohnson.xml
-codium --install-extension James-Yu.latex-workshop
-codium --install-extension Pivotal.vscode-boot-dev-pack
-codium --install-extension Pivotal.vscode-spring-boot
-codium --install-extension redhat.java
-codium --install-extension vscjava.vscode-java-debug
-codium --install-extension vscjava.vscode-java-dependency
-codium --install-extension vscjava.vscode-java-pack
-codium --install-extension vscjava.vscode-java-test
-codium --install-extension vscjava.vscode-maven
-codium --install-extension vscjava.vscode-spring-boot-dashboard
-codium --install-extension vscjava.vscode-spring-initializr
+code --install-extension alefragnani.project-manager
+code --install-extension DotJoshJohnson.xml
+code --install-extension James-Yu.latex-workshop
+code --install-extension Pivotal.vscode-boot-dev-pack
+code --install-extension Pivotal.vscode-spring-boot
+code --install-extension redhat.java
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+code --install-extension vscjava.vscode-spring-boot-dashboard
+code --install-extension vscjava.vscode-spring-initializr
 ```
 
 ### From Flathub (🤮)
