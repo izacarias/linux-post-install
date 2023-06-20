@@ -78,6 +78,12 @@ wget -c $URL -O jdk-last.tar.gz
 sudo tar -xzvf $FILENAME -C /opt
 sudo ln -s /opt/jdk-20.0.1 /opt/java
 ```
+#### Update alternatives to include new Java package
+```
+sudo alternatives --install /usr/bin/java java /opt/jdk-20.0.1/bin/java 0
+sudo alternatives --config java
+# Select the new JAVA alternative to be used as default java version
+```
 
 ### Maven
 ```
