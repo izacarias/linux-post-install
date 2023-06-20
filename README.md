@@ -71,32 +71,35 @@ source .bashrc
 
 ### OpenJDK
 ```
-cd ~/Downloads
-wget -c https://download.java.net/java/GA/jdk19/877d6127e982470ba2a7faa31cc93d04/36/GPL/openjdk-19_linux-x64_bin.tar.gz
-sudo tar -xzvf openjdk-19_linux-x64_bin.tar.gz -C /opt
-sudo ln -s /opt/jdk-19 /opt/java
+URL=https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_linux-x64_bin.tar.gz
+FILENAME=jdk-last.tar.gz
+mkdir -p ~/Downloads/software && cd ~/Downloads/software
+wget -c $URL -O jdk-last.tar.gz
+sudo tar -xzvf $FILENAME -C /opt
+sudo ln -s /opt/jdk-20.0.1 /opt/java
 ```
 
 ### Maven
 ```
-cd ~/Downloads
-wget -c https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
-sudo tar -xzvf apache-maven-3.8.6-bin.tar.gz -C /opt
+cd ~/Downloads/software
+URL=https://dlcdn.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz
+wget -c $URL -O maven-last.tar.gz
+sudo tar -xzvf maven-last.tar.gz -C /opt
 sudo ln -s /opt/apache-maven-3.8.6 /opt/maven
 ```
 
 ## GO
 ```
-cd ~/Downloads/
+cd ~/Downloads/software
 wget -c https://go.dev/dl/go1.19.2.linux-amd64.tar.gz
 sudo tar -xzvf go1.19.2.linux-amd64.tar.gz -C /opt
 ```
 
 ## Gurobi
 ```
-cd ~/Downloads
-wget -c https://packages.gurobi.com/9.5/gurobi9.5.2_linux64.tar.gz
-sudo tar -xzvf gurobi9.5.2_linux64.tar.gz -C /opt
+cd ~/Downloads/software
+wget -c https://packages.gurobi.com/10.0/gurobi10.0.2_linux64.tar.gz -O gurobi-last.tar.gz
+sudo tar -xzvf gurobi-last.tar.gz -C /opt
 sudo ln -s /opt/gurobi952 /opt/gurobi
 sudo chcon -t textrel_shlib_t /opt/gurobi/linux64/lib/libgurobi95.so
 ```
