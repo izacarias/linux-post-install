@@ -65,7 +65,7 @@ sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
 sudo dnf install codium
 ```
- - VS Codium Extensions
+ - VSCode Extensions
 ```
 code --install-extension alefragnani.project-manager
 code --install-extension DotJoshJohnson.xml
@@ -89,6 +89,13 @@ code --install-extension vscjava.vscode-spring-initializr
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-modify --enable flathub
 sudo flatpak install flathub im.riot.Riot
+```
+
+### Install multimedia codecs and plugins (fix videos not playing in Youtube)
+```
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
 ```
 
 ### Fonts
