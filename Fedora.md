@@ -97,6 +97,10 @@ sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-open
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia --allowerasing
 ```
+### R and R-Studio
+```bash
+sudo dnf install R R-devel rstudio rstudio-desktop
+```
 
 ### Fonts
 
