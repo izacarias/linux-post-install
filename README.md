@@ -32,6 +32,7 @@ EOF
  - [Tray Icons Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
  - [Tweaks in System Menu](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
  - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+ - [UI Improvements](https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/)
  
 ### Gnome Shortcuts
 ```
