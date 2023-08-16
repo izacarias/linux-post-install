@@ -45,6 +45,10 @@ sudo dnf install -y crontabs
 sudo dnf install -y rclone
 sudo dnf install -y vim-X11
 ```
+### Next Cloud dependency
+```
+sudo dnf install -y qqc2-desktop-style
+```
 
 ### From Extra Official Repositories
 
