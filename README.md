@@ -89,7 +89,7 @@ sudo alternatives --config java
 ### Maven
 ```
 cd ~/Downloads/software
-URL=https://dlcdn.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz
+URL=https://dlcdn.apache.org/maven/maven-3/3.9.4/source/apache-maven-3.9.4-src.tar.gz
 wget -c $URL -O maven-last.tar.gz
 sudo tar -xzvf maven-last.tar.gz -C /opt
 sudo ln -s /opt/apache-maven-3.8.6 /opt/maven
