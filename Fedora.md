@@ -33,7 +33,8 @@ List of softwares usually installed in my computer
  - VIM Editor
  
 ```
-sudo dnf install -y telegram-desktop
+# sudo dnf install -y telegram-desktop
+sudo dnf install -y flameshot
 sudo dnf install -y keepassxc
 sudo dnf install -y inkscape
 sudo dnf install -y gimp
