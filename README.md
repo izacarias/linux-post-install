@@ -34,6 +34,7 @@ EOF
  - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
  - [UI Improvements](https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/)
  - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+ - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
  
 ### Gnome Shortcuts
 ```
