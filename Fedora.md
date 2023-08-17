@@ -15,6 +15,11 @@ sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf groupupdate -y core
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+
+# Fix YouTube videos not playing
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia --allowerasing
 ```
 
 ## Software
@@ -96,12 +101,6 @@ sudo flatpak remote-modify --enable flathub
 sudo flatpak install flathub im.riot.Riot
 ```
 
-### Install multimedia codecs and plugins (fix videos not playing in Youtube)
-```
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-sudo dnf install lame\* --exclude=lame-devel
-sudo dnf group upgrade --with-optional Multimedia --allowerasing
-```
 ### R and R-Studio
 ```bash
 sudo dnf install R R-devel rstudio rstudio-desktop
