@@ -100,6 +100,10 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak remote-modify --enable flathub
 sudo flatpak install flathub im.riot.Riot
 ```
+#### Make Element autostart (because the software is so good that cannot manage a text file...)
+```
+cp /var/lib/flatpak/exports/share/applications/im.riot.Riot.desktop ~/.config/autostart/
+```
 
 ### R and R-Studio
 ```bash
