@@ -70,6 +70,17 @@ echo '' >> ~/.bashrc
 source .bashrc 
 ```
 
+### Installing Meslo Fonts
+```
+mkdir -p ~/Downloads/Fonts && cd ~/Downloads/Fonts/
+curl -fLO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.tar.xz
+tar -xf Meslo.tar.xz -C ./meslo
+sudo mv meslo /usr/share/fonts/
+sudo chown -R root:root /usr/share/fonts/meslo
+sudo chmod 755 /usr/share/fonts/meslo
+sudo chmod 644 /usr/share/fonts/meslo/*.ttf 
+```
+
 ## Java
 
 ### OpenJDK
