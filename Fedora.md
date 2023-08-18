@@ -112,6 +112,11 @@ sudo dnf install R R-devel rstudio rstudio-desktop
 
 ### Fonts
 
+#### Fancy font from Google (Similar to SanFrancisco)
+```
+sudo dnf install http://bootes.ethz.ch/fonts/rpm/fonts-inter-1.0-1.noarch.rpm
+```
+
  - Required Packages
 ```
 sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig fontforge
