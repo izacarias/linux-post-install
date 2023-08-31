@@ -272,3 +272,57 @@ cd ~/Downloads/
 tar -xvf tubslatex_installer_1.3.4.sh.tar
 sh tubslatex_installer_1.3.4.sh
 ```
+
+# Install Flutter (Optional)
+
+## Install dependencies
+```
+sudo dnf install -y clang cmake ninja-build gtk3-devel zlib.i686 ncurses-libs.i686 bzip2-libs.i686
+```
+
+### Android Studio
+```
+# firefox https://developer.android.com/studio
+cd ~/Downloads
+tar -xzvf android-studio-2022.3.1.19-linux.tar.gz
+sudo mv android-studio /opt/
+cd /opt/android-studio/bin/
+./studio.sh
+# Accept and install the suggested components
+```
+
+## Download Flutter
+```
+mkdir -p ~/Downloads/flutter && cd ~/Downloads/flutter 
+wget -c https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.1-stable.tar.xz
+cd ~/devel
+tar -xf ~/Downloads/flutter/flutter_linux_3.13.1-stable.tar.xz
+```
+
+## Configure PATH for Flutter and set Chrome executable
+```
+cat << EOF > ~/.bashrc.d/flutter.conf
+# Setting the path to Flutter executable
+export PATH="$PATH:/home/zaca/devel/flutter/bin"
+
+# Configure Chromium as default browser for Flutter Web
+export CHROME_EXECUTABLE=/usr/bin/chromium-browser
+EOF
+
+source $HOME/.bashrc
+```
+
+## Initial setup
+```
+flutter precache
+flutter --disable-telemetry # Optional
+```
+## Accept Android licenses
+```
+flutter doctor --android-licenses
+```
+
+## Check dependencies with Flutter doctor
+```
+flutter doctor
+```
