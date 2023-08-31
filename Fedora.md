@@ -273,9 +273,9 @@ tar -xvf tubslatex_installer_1.3.4.sh.tar
 sh tubslatex_installer_1.3.4.sh
 ```
 
-# Install Flutter (Optional)
+## Install Flutter (Optional)
 
-## Install dependencies
+### Install dependencies
 ```
 sudo dnf install -y clang cmake ninja-build gtk3-devel zlib.i686 ncurses-libs.i686 bzip2-libs.i686
 ```
@@ -291,7 +291,7 @@ cd /opt/android-studio/bin/
 # Accept and install the suggested components
 ```
 
-## Download Flutter
+### Download Flutter
 ```
 mkdir -p ~/Downloads/flutter && cd ~/Downloads/flutter 
 wget -c https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.1-stable.tar.xz
@@ -299,7 +299,7 @@ cd ~/devel
 tar -xf ~/Downloads/flutter/flutter_linux_3.13.1-stable.tar.xz
 ```
 
-## Configure PATH for Flutter and set Chrome executable
+### Configure PATH for Flutter and set Chrome executable
 ```
 cat << EOF > ~/.bashrc.d/flutter.conf
 # Setting the path to Flutter executable
@@ -312,17 +312,17 @@ EOF
 source $HOME/.bashrc
 ```
 
-## Initial setup
+### Initial setup
 ```
 flutter precache
 flutter --disable-telemetry # Optional
 ```
-## Accept Android licenses
+### Accept Android licenses
 ```
 flutter doctor --android-licenses
 ```
 
-## Check dependencies with Flutter doctor
+### Check dependencies with Flutter doctor
 ```
 flutter doctor
 ```
