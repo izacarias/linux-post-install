@@ -117,6 +117,29 @@ sudo dnf install R R-devel rstudio rstudio-desktop
 sudo dnf install http://bootes.ethz.ch/fonts/rpm/fonts-inter-1.0-1.noarch.rpm
 ```
 
+##### Or DIY
+```
+_url="https://github.com/google/fonts/archive/master.tar.gz"
+_fonts="google-fonts"
+
+echo "Downloading fonts..."
+wget $_url -O $_fonts.tar.gz
+
+echo "Extracting the archive..."
+tar -xf $_fonts.tar.gz
+
+echo "Creating the /usr/share/fonts/truetype/$_fonts folder"
+sudo mkdir -p /usr/share/fonts/truetype/$_fonts
+
+echo "Installing all .ttf fonts in /usr/share/fonts/truetype/$_fonts"
+find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \; || return 1
+
+echo "Updating the font cache"
+fc-cache -f > /dev/null
+rm -f $_fonts.tar.gz
+echo "Done"
+```
+
  - Required Packages
 ```
 sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig fontforge
