@@ -22,6 +22,24 @@ sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia --allowerasing
 ```
 
+# Creat UDEV rules for thumbdrives (partially fix the problem of long waitings to eject drives)
+```
+sudo touch /etc/udev/rules.d/61-block-scheduler.rules
+
+cat << 'EOF' | sudo tee /etc/udev/rules.d/61-block-scheduler.rules
+#Most things will use mq-deadline, including flash drives that often lie that they are rotational
+ACTION=="add", SUBSYSTEM=="block", \
+  KERNEL=="hd*[!0-9]|mmcblk*[0-9]|msblk*[0-9]|mspblk*[0-9]|sd*[!0-9]", \
+  ATTR{queue/scheduler}="mq-deadline"
+
+#Only drives that tend to reliably report rotational, and do report rotational, will use BFQ.
+ACTION=="add", SUBSYSTEM=="block", \
+  KERNEL=="hd*[!0-9]|sd*[!0-9]|sr*", \
+  ATTR{queue/rotational}=="1", \
+  ATTR{queue/scheduler}="bfq"
+EOF
+```
+
 ## Software
 List of softwares usually installed in my computer
 
