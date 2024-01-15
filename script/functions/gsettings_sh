@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function gsettings_config {
+	echo_message info "Updating gsettings..."
+	# Variables
+	LIST=$(dirname "$0")'/data/gsettings.list'
+	while IFS= read line
+	do
+		gsettings set $line
+	done < "$LIST"
+	# Finished
+	echo_message success "Settings changed successfully."
+}
