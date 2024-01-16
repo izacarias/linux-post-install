@@ -26,33 +26,45 @@ function import_functions {
 	done
 }
 
-# The installer accepts two parameters
+# The installer accepts two parameters for the installation type
 # - laptop
 # - desktop
+# $1 - installation type
 function main() {
     clear
     import_functions
-    echo_message info "Starting the script"
-    # TODO: Add SSH keys to SSH Agent
+    if [ "$#" -eq 1 ]; then
+        # General configurations
+        echo_message info "Starting the script"
+        # gsettings_config "gsettings"                # configuring Gnome
+        # add_rpmfusion "free"
+        # add_rpmfusion "nonfree"
+        # install_package_list "general"
+        if [[ "$1" == laptop ]] then
+            echo_message info "Executing laptop specific actions"
+            # add_copr "kallepm/tuxedo-drivers"
+            # add_copr "kallepm/tuxedo-touchpad-switch"
+            # add_copr "kallepm/tuxedo-control-center"
+            # install_package_list "laptop"
+        fi
+    else
+        echo_message fail "Wrong number of arguments"    
+    fi
     
-
+    # TODO: Add SSH keys to SSH Agent
     # TODO: Coloring the shell prompt
-
     # TODO: Gnome Extensions
     # Gnome Shortcuts (GSettings)
-    gsettings_config "gsettings"
     # TODO: Configure Bash
     # TODO: Install fonts
     # TODO: Configure DNF
-    # TODO: Enable RPM Fusion Repositories
-    # install_package_list "packages"
     
     # Install OpenJDK
     # Install Maven
     # Install GO
     # Install Gurobi
-
-
     echo_message info "Finished"
 }
-main
+
+# Calls the main function
+main "$@"

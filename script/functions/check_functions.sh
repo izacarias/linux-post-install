@@ -6,33 +6,6 @@ function check_package_installed() {
 	dnf list installed | grep $@ &> /dev/null; echo $?
 }
 
-# Check if single package is installed
-# ${1} = package, ${2} = return_function
-function check_package() {
-	# echo_message header "Starting 'check_package' function"
-	# if package is not installed
-	if [ $(check_package_installed ${1}) != 0 ]; then
-		# draw window
-		if (whiptail \
-			--title "Install ${1}" \
-			--yesno "This function requires '${1}' but it is not present on your system. \n\nWould you like to install it to continue? " 10 64) then
-			# Install
-			echo_message info "Installing '${3}'..."
-			superuser_do "dnf install -y ${1}"
-			# Finished
-			echo_message success "${1} is installation complete."
-			whiptail --title "Finished" --msgbox "Installation of ${1} Flatpak complete." 8 56
-			${2}
-		else
-			# Cancelled
-			echo_message info "Installation of ${1} cancelled."
-			${2}
-		fi
-	else
-		echo_message info "Function dependency '${1}' is installed."
-	fi
-}
-
 # Check for Flatpak repository
 # ${1} = remote, ${2} = https://remote.example.com/, ${3} = return_function
 function check_flatpak_repo {
