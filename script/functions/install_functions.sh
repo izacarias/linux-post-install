@@ -4,7 +4,7 @@
 # ${1} = package-name
 
 function install_package() {
-	echo_message header "Starting 'install_package' function..."
+	echo_message info "Starting 'install_package' function..."
 	# If package is not installed
 	if [ $(check_package_installed ${1}) != 0 ]; then
 		echo_message info "${1} is not installed. Installing..."
@@ -23,10 +23,28 @@ function install_package() {
 	fi
 }
 
+#
+# $1 command
+# $2 command name
+# $3 message
+function dnf_command(){
+    echo_message info "$3"
+
+}
+
 function install_package_list() {
-    echo_message header "Starting installation of packages..."
+    echo_message info "Starting installation of packages..."
     LIST=$(dirname "$0")'/data/'${1}'.list'
     for PACKAGE in $(cat $LIST); do
         install_package $PACKAGE
     done
+}
+
+function install_codecs() {
+    dnf_command "Updating DNF Core..."
+    superuser_do "dnf groupupdate -y core"
+    superuser_do "dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin"
+    superuser_do dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+    superuser_do dnf install lame\* --exclude=lame-devel
+    superuser_do dnf group upgrade --with-optional Multimedia --allowerasing
 }

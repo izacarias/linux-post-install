@@ -1,7 +1,8 @@
 #!/bin/bash
 
-
-cat <<EOF | sudo tee /etc/profile.d/color_prompt.sh > /dev/null 2>&1
+function bash_custom () {
+    echo_message info "Installing '${3}'..."
+    cat <<EOF | sudo tee /etc/profile.d/color_prompt.sh > /dev/null 2>&1
 # Colors in Terminal (Bash)
 if [[ ! -z \$BASH ]]; then
     if [[ \$EUID -eq 0 ]]; then
@@ -11,3 +12,5 @@ if [[ ! -z \$BASH ]]; then
     fi
 fi
 EOF
+
+}

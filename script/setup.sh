@@ -39,6 +39,7 @@ function main() {
         # gsettings_config "gsettings"                # configuring Gnome
         # add_rpmfusion "free"
         # add_rpmfusion "nonfree"
+        # add_copr "kwizart/fedy"
         # install_package_list "general"
         if [[ "$1" == laptop ]] then
             echo_message info "Executing laptop specific actions"
@@ -46,6 +47,7 @@ function main() {
             # add_copr "kallepm/tuxedo-touchpad-switch"
             # add_copr "kallepm/tuxedo-control-center"
             # install_package_list "laptop"
+
         fi
     else
         echo_message fail "Wrong number of arguments"    
@@ -54,7 +56,6 @@ function main() {
     # TODO: Add SSH keys to SSH Agent
     # TODO: Coloring the shell prompt
     # TODO: Gnome Extensions
-    # Gnome Shortcuts (GSettings)
     # TODO: Configure Bash
     # TODO: Install fonts
     # TODO: Configure DNF
