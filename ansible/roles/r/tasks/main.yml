@@ -1,0 +1,24 @@
+---
+
+- name: Install R
+  ansible.builtin.dnf:
+    name: R
+    state: present
+
+
+- name: Install R-devel
+  ansible.builtin.dnf:
+    name: R-devel
+    state: present
+
+
+- name: Install R Studio
+  ansible.builtin.dnf:
+    name: rstudio
+    state: present
+
+
+- name: Install rstudio-desktop
+  ansible.builtin.dnf:
+    name: rstudio-desktop
+    state: present

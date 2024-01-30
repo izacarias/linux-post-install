@@ -3,9 +3,10 @@
 - name: Fedora Common Playbook
   hosts: localhost
   roles:
-  #  - role: common
-  #    become: true
-  #    tags: common
+    - role: common
+      become: true
+      tags: common
+    
     - role: flameshot
       become: true
       tags: flameshot
@@ -36,12 +37,18 @@
     - role: vim
       become: true
 
-    - role: vscode
+    - role: gnome
       become: true
 
-    - role: gnome
+    - role: r
+      become: true
+
+    - role: fonts
       become: true
 
     - role: appimagelauncher
       become: false
       tags: appimagelauncher
+
+    - role: vscode
+      become: true

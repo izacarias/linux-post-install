@@ -25,11 +25,17 @@
     update_cache: true
     state: present
 
+- name: Check if extensio is installed - alefragnani.project-manager
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep alefragnani.project-manager
+  register: myregister
 
 - name: Install VSCode Extensions - Project Manager
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension alefragnani.project-manager
+  when: myregister.stdout | length == 0
 
 - name: Install VSCode Extensions - DotJoshJohnson.xml
   become: true
