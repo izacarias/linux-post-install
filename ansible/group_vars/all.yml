@@ -1,0 +1,10 @@
+---
+
+my_user: "zaca"
+
+# Local configurations
+appimage_dir: /home/zaca/applications
+
+# Download URLs
+nextcloud:
+  url: https://github.com/nextcloud-releases/desktop/releases/latest/download/Nextcloud-3.11.1-x86_64.AppImage

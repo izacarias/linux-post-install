@@ -1,0 +1,6 @@
+---
+
+- name: Install Gimp
+  ansible.builtin.dnf:
+    name: gimp
+    state: present

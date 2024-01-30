@@ -1,0 +1,6 @@
+---
+
+- name: Install Gnome Extensions
+  ansible.builtin.dnf:
+    name: gnome-extensions-app
+    state: present

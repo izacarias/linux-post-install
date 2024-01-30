@@ -1,0 +1,11 @@
+---
+
+- name: Install Foomatic
+  ansible.builtin.dnf:
+    name: foomatic
+    state: present
+
+- name: Install Gutenprint CUPS
+  ansible.builtin.dnf:
+    name: gutenprint-cups
+    state: present

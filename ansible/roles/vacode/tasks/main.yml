@@ -1,0 +1,90 @@
+---
+
+- name: Add RPM Signing Key for VSCode
+  become: true
+  ansible.builtin.rpm_key:
+    key: "https://packages.microsoft.com/keys/microsoft.asc"
+    state: present
+
+
+- name: Add repository for VSCode
+  become: true
+  ansible.builtin.yum_repository:
+    name: vscode
+    description: Visual Studio Code
+    baseurl: "https://packages.microsoft.com/yumrepos/vscode"
+    gpgcheck: true
+    gpgkey: "https://packages.microsoft.com/keys/microsoft.asc"
+    enabled: true
+
+
+- name: Install VSCode
+  become: true
+  ansible.builtin.dnf:
+    name: code
+    update_cache: true
+    state: present
+
+
+- name: Install VSCode Extensions - Project Manager
+  ansible.builtin.command: code --install-extension alefragnani.project-manager
+
+- name: Install VSCode Extensions - DotJoshJohnson.xml
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension DotJoshJohnson.xml
+
+- name: Install VSCode Extensions - James-Yu.latex-workshop
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension James-Yu.latex-workshop
+
+- name: Install VSCode Extensions - vmware.vscode-boot-dev-pack
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vmware.vscode-boot-dev-pack
+
+- name: Install VSCode Extensions - vmware.vscode-spring-boot
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vmware.vscode-spring-boot
+
+- name: Install VSCode Extensions - redhat.java
+  become: true
+  become_user: "{{my_user}}" 
+  ansible.builtin.command: code --install-extension redhat.java
+
+- name: Install VSCode Extensions - vscjava.vscode-java-debug
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-java-debug
+
+- name: Install VSCode Extensions - vscjava.vscode-java-dependency
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-java-dependency
+
+- name: Install VSCode Extensions - vscjava.vscode-java-pack
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-java-pack
+
+- name: Install VSCode Extensions - vscjava.vscode-java-test
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-java-test
+
+- name: Install VSCode Extensions - vscjava.vscode-maven
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-maven
+
+- name: Install VSCode Extensions - vscjava.vscode-spring-boot-dashboard
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-spring-boot-dashboard
+
+- name: Install VSCode Extensions - vscjava.vscode-spring-initializr
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --install-extension vscjava.vscode-spring-initializr

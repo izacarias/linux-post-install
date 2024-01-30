@@ -1,0 +1,12 @@
+---
+
+- name: Install NextCloud Client Dependencies
+  ansible.builtin.dnf:
+    name: qqc2-desktop-style
+    state: present
+
+- name: Install NextCloud Client
+  ansible.builtin.get_url:
+    url: "{{nextcloud.url}}"
+    dest: "{{appimage_dir}}/Nextcloud.AppImage"
+    mode: '0755'

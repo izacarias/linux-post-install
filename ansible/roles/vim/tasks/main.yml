@@ -1,0 +1,6 @@
+---
+
+- name: Install Vim and GVIM
+  ansible.builtin.dnf:
+    name: vim-X11
+    state: present

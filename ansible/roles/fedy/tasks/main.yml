@@ -1,0 +1,13 @@
+---
+
+
+- name: Enable COPR for Fedy
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    name: kwizart/fedy
+    state: enabled
+
+- name: Install Fedy
+  ansible.builtin.dnf:
+    name: fedy
+    state: present
