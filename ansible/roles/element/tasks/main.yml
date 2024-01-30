@@ -1,0 +1,14 @@
+---
+
+- name: Add the flathub flatpak repository (Element)
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    state: present
+
+
+- name: Install the Element Desktop IM
+  community.general.flatpak:
+    name: im.riot.Riot
+    remote: flathub
+    state: present
