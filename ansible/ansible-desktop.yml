@@ -1,0 +1,7 @@
+--- 
+
+- name: Fedora Playbook Initialization (Desktop)
+  hosts: localhost
+
+- import_playbook: ansible-common.yml
+  tags: common
