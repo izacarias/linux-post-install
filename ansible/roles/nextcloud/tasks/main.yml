@@ -1,9 +1,19 @@
 ---
 
 - name: Install NextCloud Client Dependencies
+  become: true
   ansible.builtin.dnf:
     name: qqc2-desktop-style
     state: present
+
+
+- name: Create directory for AppImages (if it not exists)
+  become: false
+  ansible.builtin.file:
+    path: "{{appimage_dir}}"
+    state: directory
+    mode: '0755'
+
 
 - name: Install NextCloud Client
   ansible.builtin.get_url:

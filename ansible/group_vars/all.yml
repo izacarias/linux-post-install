@@ -3,7 +3,7 @@
 my_user: "zaca"
 
 # Local configurations
-appimage_dir: /home/zaca/applications
+appimage_dir: /home/zaca/Applications
 
 # Download URLs
 nextcloud:

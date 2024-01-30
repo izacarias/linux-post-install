@@ -27,6 +27,8 @@
 
 
 - name: Install VSCode Extensions - Project Manager
+  become: true
+  become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension alefragnani.project-manager
 
 - name: Install VSCode Extensions - DotJoshJohnson.xml
