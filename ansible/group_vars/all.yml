@@ -1,9 +1,11 @@
 ---
 
 my_user: "zaca"
+my_home_folder: "/home/zaca"
+fedora_version: "39"
 
 # Local configurations
-appimage_dir: /home/zaca/Applications
+appimage_dir: "{{my_home_folder}}/Applications"
 
 # Download URLs
 nextcloud:

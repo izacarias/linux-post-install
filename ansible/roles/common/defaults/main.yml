@@ -15,3 +15,8 @@ common:
     - unzip
     - wget
     - zip
+    - cabextract
+    - xorg-x11-font-utils 
+    - fontconfig 
+    - fontforge
+    - distribution-gpg-keys
