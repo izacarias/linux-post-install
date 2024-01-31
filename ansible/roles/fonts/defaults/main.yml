@@ -1,0 +1,59 @@
+---
+
+fonts:
+  clear_type: 
+    url:  https://lexics.github.io/assets/downloads/fonts/clearTypeFonts
+    fonts:
+      - calibrib.ttf
+      - calibrii.ttf
+      - calibri.ttf
+      - calibriz.ttf
+      - cambriab.ttf
+      - cambriai.ttf
+      - cambriamath.ttf
+      - cambria.ttf
+      - cambriaz.ttf
+      - candarab.ttf
+      - candarai.ttf
+      - candara.ttf
+      - candaraz.ttf
+      - consolab.ttf
+      - consolai.ttf
+      - consola.ttf
+      - consolaz.ttf
+      - constanb.ttf
+      - constani.ttf
+      - constan.ttf
+      - constanz.ttf
+      - corbelb.ttf
+      - corbeli.ttf
+      - corbel.ttf
+      - corbelz.ttf
+  tahoma:
+    url: https://lexics.github.io/assets/downloads/fonts/tahoma
+    fonts:
+      - tahomabd.ttf
+      - tahoma.ttf
+  segoeui:
+    url: https://lexics.github.io/assets/downloads/fonts/segoeUI
+    fonts:
+      - segoeuib.ttf
+      - segoeuil.ttf
+      - segoeui.ttf
+      - seguili.ttf
+      - seguisb.ttf
+      - segoeuii.ttf
+      - segoeuisl.ttf
+      - segoeuiz.ttf
+      - seguisbi.ttf
+      - seguisli.ttf
+  essential:
+    url: https://lexics.github.io/assets/downloads/fonts/other-essential-fonts
+    fonts:
+      - mtextra.ttf
+      - symbol.ttf
+      - webdings.ttf
+      - wingding.ttf
+      - wingdng2.ttf
+      - wingdng3.ttf
+  

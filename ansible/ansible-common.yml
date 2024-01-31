@@ -3,52 +3,53 @@
 - name: Fedora Common Playbook
   hosts: localhost
   roles:
-    - role: common
-      become: true
-      tags: common
+    # - role: common
+    #   become: true
+    #   tags: common
     
-    - role: flameshot
-      become: true
-      tags: flameshot
+    # - role: flameshot
+    #   become: true
+    #   tags: flameshot
 
-    - role: fedy
-      become: true
-      tags: fedy
+    # - role: fedy
+    #   become: true
+    #   tags: fedy
 
-    - role: gimp
-      become: true
-      tags: gimp
+    # - role: gimp
+    #   become: true
+    #   tags: gimp
     
-    - role: inkscape
-      become: true
+    # - role: inkscape
+    #   become: true
 
-    - role: keepassxc
-      become: true
+    # - role: keepassxc
+    #   become: true
 
-    - role: nextcloud
-      become: false
+    # - role: nextcloud
+    #   become: false
 
-    - role: printing
-      become: true
+    # - role: printing
+    #   become: true
 
-    - role: element
-      become: true
+    # - role: element
+    #   become: true
 
-    - role: vim
-      become: true
+    # - role: vim
+    #   become: true
 
-    - role: gnome
-      become: true
+    # - role: gnome
+    #   become: true
 
-    - role: r
-      become: true
+    # - role: r
+    #   become: true
+
+
+    # - role: appimagelauncher
+    #   become: false
+    #   tags: appimagelauncher
+
+    # - role: vscode
+    #   become: true
 
     - role: fonts
-      become: true
-
-    - role: appimagelauncher
-      become: false
-      tags: appimagelauncher
-
-    - role: vscode
       become: true

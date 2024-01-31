@@ -1,8 +1,88 @@
 ---
 
-- name: Install Fonts from Google
+- name: Install Microsoft Core Fonts (1/2)
   become: true
   ansible.builtin.dnf:
-    name: 'https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm'
+    name: 'https://netcologne.dl.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm'
     disable_gpg_check: true
     state: present
+
+- name: Install Microsoft Core Fonts (2/2)
+  become: true
+  ansible.builtin.dnf:
+    name: mscore-fonts-all
+    disable_gpg_check: true
+    state: present
+
+
+# Clear Type Fonts
+- name: Install Microsoft ClearType Fonts (create directory)
+  become: true
+  become_user: "{{ my_user }}"
+  ansible.builtin.file:
+    path: "{{my_home_folder}}/.local/share/fonts/clearTypeFonts"
+    state: directory
+    mode: '0755'
+
+- name: Download Clear Type Fonts
+  ansible.builtin.get_url:
+    url: "{{ fonts.clear_type.url }}/{{ item }}"
+    dest: "{{my_home_folder}}/.local/share/fonts/clearTypeFonts"
+    mode: '0644'
+  with_items: "{{ fonts.clear_type.fonts }}"
+
+
+# Tahoma
+- name: Install Microsoft Tahoma Fonts (create directory)
+  become: true
+  become_user: "{{ my_user }}"
+  ansible.builtin.file:
+    path: "{{my_home_folder}}/.local/share/fonts/Tahoma"
+    state: directory
+    mode: '0755'
+
+- name: Download Tahoma Fonts
+  ansible.builtin.get_url:
+    url: "{{ fonts.tahoma.url }}/{{ item }}"
+    dest: "{{my_home_folder}}/.local/share/fonts/Tahoma"
+    mode: '0644'
+  with_items: "{{ fonts.tahoma.fonts }}"
+
+# SegoeUI
+- name: Install Microsoft SegoeUI Fonts (create directory)
+  become: true
+  become_user: "{{ my_user }}"
+  ansible.builtin.file:
+    path: "{{my_home_folder}}/.local/share/fonts/SegoeUI"
+    state: directory
+    mode: '0755'
+
+- name: Download SegoeUI Fonts
+  ansible.builtin.get_url:
+    url: "{{ fonts.segoeui.url }}/{{ item }}"
+    dest: "{{my_home_folder}}/.local/share/fonts/SegoeUI"
+    mode: '0644'
+  with_items: "{{ fonts.segoeui.fonts }}"
+
+
+# SegoeUI
+- name: Install Microsoft Essential Fonts (create directory)
+  become: true
+  become_user: "{{ my_user }}"
+  ansible.builtin.file:
+    path: "{{my_home_folder}}/.local/share/fonts/Essential"
+    state: directory
+    mode: '0755'
+
+- name: Download Tahome Fonts
+  ansible.builtin.get_url:
+    url: "{{ fonts.essential.url }}/{{ item }}"
+    dest: "{{my_home_folder}}/.local/share/fonts/Essential"
+    mode: '0644'
+  with_items: "{{ fonts.essential.fonts }}"
+
+
+# Update fontcache
+- name: Update Font Cache
+  become: true
+  ansible.builtin.command: fc-cache -f -v

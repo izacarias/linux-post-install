@@ -8,7 +8,7 @@
 - name: Install common packages for Linux (utilities...)
   become: true
   ansible.builtin.dnf:
-    name: "{{ common.packages}}"
+    name: "{{ common.packages }}"
     state: latest
 
 - name: Import RPMFusion free distribution-gpg-keys
@@ -17,12 +17,21 @@
     key: "/usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-{{ fedora_version }}"
     state: present
 
+- name: Install RPM Fusion repository (free)
+  become: true
+  ansible.builtin.dnf:
+    name: "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+    state: present
+
+
 - name: Import RPMFusion non-free distribution-gpg-keys
   become: true
   ansible.builtin.rpm_key:
     key: "/usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-{{ fedora_version }}"
     state: present
 
+- name: Install RPM Fusion repository (non-free)
+  become: true
   ansible.builtin.dnf:
     name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
     state: present
