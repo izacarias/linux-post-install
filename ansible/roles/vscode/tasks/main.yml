@@ -25,7 +25,9 @@
     update_cache: true
     state: present
 
-- name: Check if extensio is installed - alefragnani.project-manager
+
+# Project Manager
+- name: Check if extension is installed - alefragnani.project-manager
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --list-extensions | grep alefragnani.project-manager
@@ -37,62 +39,170 @@
   ansible.builtin.command: code --install-extension alefragnani.project-manager
   when: myregister.stdout | length == 0
 
+
+# Johnson XML
+- name: Check if extension is installed - DotJoshJohnson.xml
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep DotJoshJohnson.xml
+  register: myregister
+
 - name: Install VSCode Extensions - DotJoshJohnson.xml
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension DotJoshJohnson.xml
+  when: myregister.stdout | length == 0
+
+
+# LaTeX Workshop
+- name: Check if extension is installed - James-Yu.latex-workshop
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep James-Yu.latex-workshop
+  register: myregister
 
 - name: Install VSCode Extensions - James-Yu.latex-workshop
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension James-Yu.latex-workshop
+  when: myregister.stdout | length == 0
+
+
+# Boot dev pack
+- name: Check if extension is installed - vmware.vscode-boot-dev-pack
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vmware.vscode-boot-dev-pack
+  register: myregister
 
 - name: Install VSCode Extensions - vmware.vscode-boot-dev-pack
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vmware.vscode-boot-dev-pack
+  when: myregister.stdout | length == 0
+
+
+# Spring Boot
+- name: Check if extension is installed - vmware.vscode-spring-boot
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vmware.vscode-spring-boot
+  register: myregister
 
 - name: Install VSCode Extensions - vmware.vscode-spring-boot
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vmware.vscode-spring-boot
+  when: myregister.stdout | length == 0
+
+
+# JAVA Red Hat
+- name: Check if extension is installed - redhat.java
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep redhat.java
+  register: myregister
 
 - name: Install VSCode Extensions - redhat.java
   become: true
   become_user: "{{my_user}}" 
   ansible.builtin.command: code --install-extension redhat.java
+  when: myregister.stdout | length == 0
+
+
+# Java DEBUG
+- name: Check if extension is installed - vscjava.vscode-java-debug
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-java-debug
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-java-debug
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-java-debug
+  when: myregister.stdout | length == 0
+
+
+# Java Dependencies
+- name: Check if extension is installed - vscjava.vscode-java-dependency
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-java-dependency
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-java-dependency
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-java-dependency
+  when: myregister.stdout | length == 0
+
+
+# Java Pack
+- name: Check if extension is installed - vscjava.vscode-java-pack
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-java-pack
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-java-pack
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-java-pack
+  when: myregister.stdout | length == 0
+
+
+# Java Test
+- name: Check if extension is installed - vscjava.vscode-java-test
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-java-test
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-java-test
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-java-test
+  when: myregister.stdout | length == 0
+
+
+# Maven
+- name: Check if extension is installed - vscjava.vscode-maven
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-maven
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-maven
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-maven
+  when: myregister.stdout | length == 0
+
+
+# Spring Boot Dashboard
+- name: Check if extension is installed - vscjava.vscode-spring-boot-dashboard
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-spring-boot-dashboard
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-spring-boot-dashboard
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-spring-boot-dashboard
+  when: myregister.stdout | length == 0
+
+
+# Spring Initializer
+- name: Check if extension is installed - vscjava.vscode-spring-initializr
+  become: true
+  become_user: "{{my_user}}"
+  ansible.builtin.command: code --list-extensions | grep vscjava.vscode-spring-initializr
+  register: myregister
 
 - name: Install VSCode Extensions - vscjava.vscode-spring-initializr
   become: true
   become_user: "{{my_user}}"
   ansible.builtin.command: code --install-extension vscjava.vscode-spring-initializr
+  when: myregister.stdout | length == 0
