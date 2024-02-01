@@ -3,6 +3,7 @@
 - name: Fedora Common Playbook
   hosts: localhost
   roles:
+
     # - role: common
     #   become: true
     #   tags: common
@@ -40,6 +41,9 @@
     # - role: gnome
     #   become: true
 
+    - role: terminal
+      become: true
+
     # - role: r
     #   become: true
 
@@ -51,5 +55,5 @@
     # - role: vscode
     #   become: true
 
-    - role: fonts
-      become: true
+    # - role: fonts
+    #   become: true

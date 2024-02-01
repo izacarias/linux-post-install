@@ -1,0 +1,10 @@
+---
+
+- name: Coloring the shell prompt
+  become: true
+  ansible.builtin.template:
+    src: files/color_prompt.j2
+    dest: /etc/profile.d/color_prompt.sh
+    owner: root
+    group: root
+    mode: '0644'

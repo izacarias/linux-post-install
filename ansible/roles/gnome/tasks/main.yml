@@ -4,3 +4,36 @@
   ansible.builtin.dnf:
     name: gnome-extensions-app
     state: present
+
+
+- name: Add shortcut for Gnome Terminal (1/4)
+  become: true
+  become_user: "{{ my_user }}"
+  community.general.dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+    state: present
+
+- name: Add shortcut for Gnome Terminal (2/4)
+  become: true
+  become_user: "{{ my_user }}"
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+    value: "'<Control><Alt>t'"
+    state: present
+
+- name: Add shortcut for Gnome Terminal (3/4)
+  become: true
+  become_user: "{{ my_user }}"
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+    value: "'gnome-terminal'"
+    state: present
+
+- name: Add shortcut for Gnome Terminal (4/4)
+  become: true
+  become_user: "{{ my_user }}"
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+    value: "'Gnome-Terminal'"
+    state: present
