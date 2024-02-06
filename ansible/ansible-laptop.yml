@@ -35,12 +35,14 @@
 
   ## Tuxedo Drivers
   - name: Enable COPR for Tuxedo Drivers
+    become: true
     community.general.copr:
       host: copr.fedorainfracloud.org
       name: kallepm/tuxedo-drivers
       state: enabled
   
   - name: Install Tuxedo Drivers
+    become: true
     ansible.builtin.dnf:
       name: tuxedo-drivers
       state: present
@@ -48,12 +50,14 @@
 
   # Tuxedo Touchpad Switch
   - name: Enable COPR for Tuxedo Touchpad Switch
+    become: true
     community.general.copr:
       host: copr.fedorainfracloud.org
       name: kallepm/tuxedo-touchpad-switch
       state: enabled
   
   - name: Install Tuxedo Touchpad Switch
+    become: true
     ansible.builtin.dnf:
       name: tuxedo-touchpad-switch
       state: present
@@ -61,12 +65,14 @@
 
   # Tuxedo Control Center
   - name: Enable COPR for Tuxedo Control Center
+    become: true
     community.general.copr:
       host: copr.fedorainfracloud.org
       name: kallepm/tuxedo-control-center
       state: enabled
   
   - name: Install Tuxedo Tuxedo Control Center
+    become: true
     ansible.builtin.dnf:
       name: tuxedo-control-center
       state: present
