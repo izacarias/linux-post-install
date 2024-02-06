@@ -32,3 +32,64 @@
       owner: "{{ my_user }}"
       group: "{{ my_user }}"
       mode: '0644'
+
+  ## Tuxedo Drivers
+  - name: Enable COPR for Tuxedo Drivers
+    community.general.copr:
+      host: copr.fedorainfracloud.org
+      name: kallepm/tuxedo-drivers
+      state: enabled
+  
+  - name: Install Tuxedo Drivers
+    ansible.builtin.dnf:
+      name: tuxedo-drivers
+      state: present
+
+
+  # Tuxedo Touchpad Switch
+  - name: Enable COPR for Tuxedo Touchpad Switch
+    community.general.copr:
+      host: copr.fedorainfracloud.org
+      name: kallepm/tuxedo-touchpad-switch
+      state: enabled
+  
+  - name: Install Tuxedo Touchpad Switch
+    ansible.builtin.dnf:
+      name: tuxedo-touchpad-switch
+      state: present
+
+
+  # Tuxedo Control Center
+  - name: Enable COPR for Tuxedo Control Center
+    community.general.copr:
+      host: copr.fedorainfracloud.org
+      name: kallepm/tuxedo-control-center
+      state: enabled
+  
+  - name: Install Tuxedo Tuxedo Control Center
+    ansible.builtin.dnf:
+      name: tuxedo-control-center
+      state: present
+
+  # Set Wallpapers
+  - name: Set Wallpaper for Laptop (1/2)
+    become: true
+    become_user: "{{ my_user }}"
+    ansible.builtin.command: 
+      argv: 
+        - /usr/bin/gsettings
+        - set
+        - org.gnome.desktop.background 
+        - picture-uri 
+        - "'{{ my_home_folder }}/.local/share/backgrounds/BigSurV2_02.jpg'"
+  
+  - name: Set Wallpaper for Laptop (2/2)
+    become: true
+    become_user: "{{ my_user }}"
+    ansible.builtin.command: 
+      argv: 
+        - /usr/bin/gsettings
+        - set
+        - org.gnome.desktop.background 
+        - picture-options 
+        - 'spanned'
