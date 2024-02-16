@@ -99,3 +99,16 @@
         - org.gnome.desktop.background 
         - picture-options 
         - 'spanned'
+
+  # Set Scaling for HiDPI Screen
+  - name: Enable fractional scaling of graph elements on Wayland
+    become: true
+    become_user: "{{ my_user }}"
+    ansible.builtin.command:
+      argv:
+        - /usr/bin/gsettings
+        - set 
+        - org.gnome.mutter
+        - experimental-features
+        - "['scale-monitor-framebuffer']"
+  
