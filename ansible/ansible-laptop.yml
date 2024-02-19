@@ -1,4 +1,10 @@
 ---
+- name: Fedora Playbook Initialization (Laptop)
+  hosts: localhost
+
+- import_playbook: ansible-common.yml
+  tags: common
+
 - name: Laptop specific configurations
   hosts: localhost
   tasks:
