@@ -1,0 +1,11 @@
+---
+
+- name: Install Wine
+  ansible.builtin.dnf:
+    name: wine
+    state: present
+
+- name: Install Wine
+  ansible.builtin.dnf:
+    name: winetricks
+    state: present

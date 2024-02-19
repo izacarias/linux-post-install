@@ -46,13 +46,23 @@
 
     - role: r
       become: true
+      tags: stat
 
     - role: appimagelauncher
       become: false
-      tags: appimagelauncher
+      tags: general
 
     - role: vscode
       become: true
+      tags: dev
 
     - role: fonts
       become: true
+      tags: general
+
+    # - role: pyenv
+    #   tags: python-dev
+
+    - role: wine
+      become: true
+      tags: general
