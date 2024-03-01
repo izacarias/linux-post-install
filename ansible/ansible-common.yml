@@ -66,3 +66,7 @@
     - role: wine
       become: true
       tags: general
+
+    - role: java-jdk
+      become: true
+      tags: java
