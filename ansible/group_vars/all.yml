@@ -9,4 +9,11 @@ appimage_dir: "{{my_home_folder}}/Applications"
 
 # Download URLs
 nextcloud:
-  url: https://github.com/nextcloud-releases/desktop/releases/latest/download/Nextcloud-3.12.0-x86_64.AppImage
+  url: https://github.com/nextcloud-releases/desktop/releases/latest/download/Nextcloud-3.11.1-x86_64.AppImage
+
+jdk:
+  bin_name: jdk-21.0.2
+  url: "https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_linux-x64_bin.tar.gz"
+  dest: "{{my_home_folder}}/Downloads/openjdk-21.0.2.tar.gz"
+  final_dest: /opt
+  sym_link: /opt/java
