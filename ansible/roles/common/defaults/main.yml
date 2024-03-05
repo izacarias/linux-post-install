@@ -20,3 +20,4 @@ common:
     - fontconfig 
     - fontforge
     - distribution-gpg-keys
+    - powerline-fonts
