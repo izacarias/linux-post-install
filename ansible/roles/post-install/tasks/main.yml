@@ -1,0 +1,7 @@
+---
+
+- name: remove unused packages
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ postinstall.packages }}"
+    state: absent

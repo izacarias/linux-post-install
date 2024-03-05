@@ -1,0 +1,7 @@
+---
+
+postinstall:
+  packages:
+    - gnome-boxes
+    - musescore
+
