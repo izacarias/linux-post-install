@@ -1,0 +1,6 @@
+---
+
+- name: Installing pyenv
+  become: true
+  become_user: "{{ my_user }}"
+  ansible.builtin.command: curl https://pyenv.run | bash
