@@ -39,45 +39,28 @@
       group: "{{ my_user }}"
       mode: '0644'
 
-  ## Tuxedo Drivers
-  - name: Enable COPR for Tuxedo Drivers
+  # TODO: Update the Tuxedo Software to use Tuxedo RPM
+  # https://www.tuxedocomputers.com/en/Infos/Help-and-Support/Instructions/Add-TUXEDO-Computers-software-package-sources.tuxedo#
+  ## Tuxedo Drivers and control center
+
+  - name: Add RPM Signing Key for Tuxedo Repository
     become: true
-    community.general.copr:
-      host: copr.fedorainfracloud.org
-      name: kallepm/tuxedo-drivers
-      state: enabled
-  
-  - name: Install Tuxedo Drivers
-    become: true
-    ansible.builtin.dnf:
-      name: tuxedo-drivers
-      state: present
+    ansible.builtin.rpm_key:
+    key: "https://rpm.tuxedocomputers.com/fedora/39/0x54840598.pub.asc"
+    state: present
 
 
-  # Tuxedo Touchpad Switch
-  - name: Enable COPR for Tuxedo Touchpad Switch
+  - name: Add repository for Tuxedo Software
     become: true
-    community.general.copr:
-      host: copr.fedorainfracloud.org
-      name: kallepm/tuxedo-touchpad-switch
-      state: enabled
-  
-  - name: Install Tuxedo Touchpad Switch
-    become: true
-    ansible.builtin.dnf:
-      name: tuxedo-touchpad-switch
-      state: present
+    ansible.builtin.yum_repository:
+      name: tuxedo
+      description: Tuxedo Computers
+      baseurl: "https://rpm.tuxedocomputers.com/fedora/39/x86_64/base"
+      gpgcheck: true
+      gpgkey: "https://rpm.tuxedocomputers.com/fedora/39/0x54840598.pub.asc"
+      enabled: true
 
-
-  # Tuxedo Control Center
-  - name: Enable COPR for Tuxedo Control Center
-    become: true
-    community.general.copr:
-      host: copr.fedorainfracloud.org
-      name: kallepm/tuxedo-control-center
-      state: enabled
-  
-  - name: Install Tuxedo Tuxedo Control Center
+  - name: Installing Tuxedo Control Center
     become: true
     ansible.builtin.dnf:
       name: tuxedo-control-center
