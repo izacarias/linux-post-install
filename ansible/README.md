@@ -18,3 +18,6 @@ sudo dnf install -y ansible curl git psutil
 ```
  ansible-playbook ansible-desktop.yml --ask-become-pass --tags "java"
 ```
+
+## TODO:
+ - [ ] Add H264 [Codec](https://fedoraproject.org/wiki/OpenH264)
