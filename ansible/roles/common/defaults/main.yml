@@ -2,23 +2,32 @@
 
 common:
   packages:
-    - bash-completion
-    - make 
     - automake 
-    - gcc 
-    - gcc-c++ 
-    - kernel-devel
+    - bash-completion
     - bzip2
-    - curl
-    - gzip
-    - p7zip
-    - unzip
-    - wget
-    - zip
+    - bzip2-devel
     - cabextract
-    - xorg-x11-font-utils 
+    - curl
+    - distribution-gpg-keys
+    - dnf-plugins-core
     - fontconfig 
     - fontforge
-    - distribution-gpg-keys
+    - gcc 
+    - gcc-c++ 
+    - gzip
+    - kernel-devel
+    - libffi-devel
+    - make 
+    - openssl-devel
+    - p7zip
     - powerline-fonts
-    - dnf-plugins-core
+    - readline-devel
+    - sqlite
+    - sqlite-devel
+    - unzip
+    - wget
+    - xorg-x11-font-utils 
+    - xz
+    - xz-devel
+    - zip
+    - zlib-devel
