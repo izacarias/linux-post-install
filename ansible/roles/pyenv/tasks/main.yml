@@ -11,4 +11,4 @@
   become_user: "{{ my_user }}"
   ansible.builtin.template:
     src: files/config_pyenv.j2
-    dest: "{{ my_home_folder }}/bashrc.d/pyenv.conf"
+    dest: "{{ my_home_folder }}/.bashrc.d/pyenv.conf"
