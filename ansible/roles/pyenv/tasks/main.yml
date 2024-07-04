@@ -4,3 +4,11 @@
   become: true
   become_user: "{{ my_user }}"
   ansible.builtin.command: curl https://pyenv.run | bash
+
+
+- name: Load pyenv at shell startup
+  become: true
+  become_user: "{{ my_user }}"
+  ansible.builtin.template:
+    src: files/config_pyenv.j2
+    dest: "{{ my_home_folder }}/bashrc.d/pyenv.conf"
