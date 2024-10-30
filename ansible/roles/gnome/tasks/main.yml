@@ -25,7 +25,7 @@
       - set
       - org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ 
       - name 
-      - 'Gnome Terminal'
+      - 'Terminal'
 
 - name: Add shortcut for Gnome Terminal (3/4)
   become: true
@@ -36,7 +36,7 @@
       - set
       - org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ 
       - command 
-      - 'gnome-terminal'
+      - 'ptyxis'
 
 - name: Add shortcut for Gnome Terminal (4/4)
   become: true

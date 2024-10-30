@@ -2,7 +2,7 @@
 
 my_user: "zaca"
 my_home_folder: "/home/zaca"
-fedora_version: "39"
+fedora_version: "41"
 
 # Local configurations
 appimage_dir: "{{my_home_folder}}/Applications"

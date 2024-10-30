@@ -4,50 +4,19 @@
 
 - import_playbook: ansible-common.yml
   tags: common
+  
+- import_playbook: ansible-customization.yml
+  tags: custom
 
 - name: Laptop specific configurations
   hosts: localhost
   tasks:
 
-  - name: Install Desktop Wallpapers(1/3)
-    become: true
-    become_user: "{{ my_user }}"
-    ansible.builtin.copy:
-      src: files/BigSurV2_01.jpg
-      dest: "{{ my_home_folder }}/.local/share/backgrounds"
-      owner: "{{ my_user }}"
-      group: "{{ my_user }}"
-      mode: '0644'
-
-  - name: Install Desktop Wallpapers(2/3)
-    become: true
-    become_user: "{{ my_user }}"
-    ansible.builtin.copy:
-      src: files/BigSurV2_02.jpg
-      dest: "{{ my_home_folder }}/.local/share/backgrounds"
-      owner: "{{ my_user }}"
-      group: "{{ my_user }}"
-      mode: '0644'
-
-  - name: Install Desktop Wallpapers(3/3)
-    become: true
-    become_user: "{{ my_user }}"
-    ansible.builtin.copy:
-      src: files/BigSurV2_03.jpg
-      dest: "{{ my_home_folder }}/.local/share/backgrounds"
-      owner: "{{ my_user }}"
-      group: "{{ my_user }}"
-      mode: '0644'
-
-  # TODO: Update the Tuxedo Software to use Tuxedo RPM
-  # https://www.tuxedocomputers.com/en/Infos/Help-and-Support/Instructions/Add-TUXEDO-Computers-software-package-sources.tuxedo#
-  ## Tuxedo Drivers and control center
-
   - name: Add RPM Signing Key for Tuxedo Repository
     become: true
     ansible.builtin.rpm_key:
-    key: "https://rpm.tuxedocomputers.com/fedora/39/0x54840598.pub.asc"
-    state: present
+      key: "https://rpm.tuxedocomputers.com/fedora/40/0x54840598.pub.asc"
+      state: present
 
 
   - name: Add repository for Tuxedo Software
@@ -65,29 +34,6 @@
     ansible.builtin.dnf:
       name: tuxedo-control-center
       state: present
-
-  # Set Wallpapers
-  - name: Set Wallpaper for Laptop (1/2)
-    become: true
-    become_user: "{{ my_user }}"
-    ansible.builtin.command: 
-      argv: 
-        - /usr/bin/gsettings
-        - set
-        - org.gnome.desktop.background 
-        - picture-uri 
-        - "'{{ my_home_folder }}/.local/share/backgrounds/BigSurV2_02.jpg'"
-  
-  - name: Set Wallpaper for Laptop (2/2)
-    become: true
-    become_user: "{{ my_user }}"
-    ansible.builtin.command: 
-      argv: 
-        - /usr/bin/gsettings
-        - set
-        - org.gnome.desktop.background 
-        - picture-options 
-        - 'spanned'
 
   # Set Scaling for HiDPI Screen
   - name: Enable fractional scaling of graph elements on Wayland

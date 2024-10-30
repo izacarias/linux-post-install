@@ -26,8 +26,8 @@
     - role: keepassxc
       become: true
 
-    - role: nextcloud
-      become: false
+    # - role: nextcloud
+    #   become: false
 
     - role: printing
       become: true
@@ -44,13 +44,13 @@
     - role: terminal
       become: true
 
-    - role: r
-      become: true
-      tags: stat
+    # - role: r
+    #  become: true
+    #  tags: stat
 
-    - role: appimagelauncher
-      become: false
-      tags: general
+    # - role: appimagelauncher
+    #  become: false
+    #  tags: general
 
     - role: vscode
       become: true
@@ -63,9 +63,9 @@
     # - role: pyenv
     #   tags: python-dev
 
-    - role: wine
-      become: true
-      tags: general
+    #- role: wine
+    #  become: true
+    #  tags: general
 
     - role: java-jdk
       become: true
