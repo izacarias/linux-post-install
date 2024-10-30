@@ -1,14 +1,5 @@
 # Fedora
 
-## Enable faster donwloads with `dnf`
-```
-# Improving DNF donwload performance
-echo '' | sudo tee -a /etc/dnf/dnf.conf
-echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
-echo 'fastestmirror=True' | sudo tee -a /etc/dnf/dnf.conf
-echo 'deltarpm=True' | sudo tee -a /etc/dnf/dnf.conf
-```
- 
 ## Enable the RPM Fusion Repository, AppStream Metadata and enable Multimedia Codecs
 ```
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
