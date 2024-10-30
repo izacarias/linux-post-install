@@ -297,12 +297,18 @@ sudo dnf install texlive-base texlive-extra \
      texlive-collection-fontutils texlive-cm-super
 ```
 
- - Download the file from [here](https://www.tu-braunschweig.de/index.php?eID=dumpFile&t=f&f=116123&token=de986a15c2ede06cdc057c43fc20a539ed043265)
- - Install the LaTeX classes
+ - Download the ZIP file from [here](https://www.tu-braunschweig.de/index.php?eID=dumpFile&t=f&f=116124&token=db08cb32d31161468d0e56078a8406b302125548)
+
 ```
 cd ~/Downloads/
-tar -xvf tubslatex_installer_1.3.4.sh.tar
-sh tubslatex_installer_1.3.4.sh
+sudo unzip -d $(kpsewhich --var-value TEXMFLOCAL) tubslatex_1.3.4.tds.zip
+sudo mktexlsr
+sudo updmap -sys --nomkmap --nohash --enable Map=NexusProSans.map
+sudo updmap -sys --nomkmap --nohash --enable Map=NexusProSerif.map
+sudo updmap -sys
+wget https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts -O /tmp/install-getnonfreefonts
+sudo texlua /tmp/install-getnonfreefonts
+sudo getnonfreefonts --sys --verbose arial-urw
 ```
 
 ## Install Flutter (Optional)
