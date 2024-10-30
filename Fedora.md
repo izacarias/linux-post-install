@@ -294,7 +294,7 @@ sudo dnf install -y BibTool
 sudo dnf install texlive-base texlive-extra \
      texlive-collection-fontsextra texlive-collection-fontsrecommended \
      texlive-collection-genericrecommended texlive-collection-langgerman \
-     texlive-collection-fontutils texlive-cm-super
+     texlive-collection-fontutils texlive-collection-fontsextra texlive-cm-super
 ```
 
  - Download the ZIP file from [here](https://www.tu-braunschweig.de/index.php?eID=dumpFile&t=f&f=116124&token=db08cb32d31161468d0e56078a8406b302125548)
