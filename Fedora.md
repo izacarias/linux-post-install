@@ -75,7 +75,10 @@ sudo dnf install -y fedy
 
  - App Image Launcher
 ```
-sudo dnf install -y https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm
+mkdir ~/Applications
+wget -c https://github.com/probonopd/go-appimage/releases/download/continuous/appimaged-851-x86_64.AppImage -O ~/Applications/appimaged-851-x86_64.AppImage
+chmod +x ~/Applications/appimaged-851-x86_64.AppImage
+~/Applications/appimaged-851-x86_64.AppImage
 ```
 
  - VS Codium
