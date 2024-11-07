@@ -11,6 +11,9 @@ appimage_dir: "{{my_home_folder}}/Applications"
 nextcloud:
   url: https://github.com/nextcloud-releases/desktop/releases/latest/download/Nextcloud-3.11.1-x86_64.AppImage
 
+appimaged:
+  url: "https://github.com/probonopd/go-appimage/releases/download/832/appimaged-823-x86_64.AppImage"
+
 jdk:
   bin_name: jdk-21.0.2
   url: "https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_linux-x64_bin.tar.gz"
