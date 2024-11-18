@@ -67,6 +67,9 @@
     #  become: true
     #  tags: general
 
+    - role: go
+      tags: go
+
     - role: java-jdk
       become: true
       tags: java

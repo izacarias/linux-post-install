@@ -1,0 +1,42 @@
+---
+
+- name: Go Lang - Download binaries
+  ansible.builtin.get_url:
+    url: "{{ go.url }}"
+    dest: "{{ go.dest }}"
+
+- name: Go Lang - Unarchive downloaded file
+  become: true
+  ansible.builtin.unarchive:
+    src: "{{ go.dest }}"
+    dest: "{{ go.final_dest}}"
+    remote_src: yes
+
+- name: Go Lang - Ceate bashrc.d directory
+  file:
+    path: "{{ my_home_folder }}/.bashrc.d"
+    state: directory
+    owner: "{{ my_user }}"
+    group: "{{ my_user }}"
+    mode: 0755
+
+- name: Go Lang - Configure Go Root
+  lineinfile:
+    create: true
+    path: "{{ my_home_folder }}/.bashrc.d/go"
+    line: "export GOROOT=/opt/go/bin"
+    regexp: '^(export GOROOT)'
+
+- name: Go Lang - Configure Go PATH
+  lineinfile:
+    create: true
+    path: "{{ my_home_folder }}/.bashrc.d/go"
+    line: "export GOPATH={{ my_home_folder }}/go"
+    regexp: '^(export GOPATH)'
+
+- name: Go Lang - Add Go Lang to PATH
+  lineinfile:
+    create: true
+    path: "{{ my_home_folder }}/.bashrc.d/go"
+    line: 'export PATH=$PATH:$GOROOT' 
+    regexp: '^(export PATH)'
