@@ -4,8 +4,10 @@
  - curl
  - git
 
+## Installing requirements
+```
 sudo dnf install -y ansible curl git psutil
-
+```
 
 # Execute the entire playbook with
 
