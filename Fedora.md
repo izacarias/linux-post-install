@@ -73,7 +73,7 @@ sudo dnf copr enable -y kwizart/fedy
 sudo dnf install -y fedy
 ```
 
- - App Image Launcher
+ - ~~App Image Launcher~~
 ```
 mkdir ~/Applications
 wget -c https://github.com/probonopd/go-appimage/releases/download/continuous/appimaged-851-x86_64.AppImage -O ~/Applications/appimaged-851-x86_64.AppImage
