@@ -3,6 +3,14 @@ Set of notes to facilitate the post install process
 
 ## General
 
+## Fonts
+The fonts that ship with your Linux Distro are fine. It does not matter whether Fedora/Ubuntu/Debian...
+However, when working on collaborative projects, some people may use different OSs, so the documents 
+they produce will probably employ different fonts.
+
+Here are some instructions on how to install fonts and also how to increase the compatibility:
+ - [Installing Fonts](Fonts.md)
+
 ### Add SSH keys to SSH Agent
 ```
 # Fix SSH key permissions
