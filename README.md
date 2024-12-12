@@ -3,7 +3,7 @@ Set of notes to facilitate the post install process
 
 ## General
 
-## Add SSH keys to SSH Agent
+### Add SSH keys to SSH Agent
 ```
 # Fix SSH key permissions
 sudo chown -R zaca:zaca ~/.ssh/
@@ -13,15 +13,6 @@ chmod 600 ~/.ssh/*
 eval $(ssh-agent)
 ssh-add ~/.ssh/{id_rsa,id_ed25519}
 ```
-
-## Fonts
-The fonts that ship with your Linux Distro are fine. It does not matter whether Fedora/Ubuntu/Debian...
-However, when working on collaborative projects, some people may use different OSs, so the documents 
-they produce will probably employ different fonts.
-
-Here are some instructions on how to install fonts and also how to increase the compatibility:
- - [Installing Fonts](Fonts.md)
-
 
 ### Coloring the shell prompt
 ```
@@ -37,7 +28,15 @@ fi
 EOF
 ```
 
-### Gnome Extensions
+## Fonts
+The fonts that ship with your Linux Distro are fine. It does not matter whether Fedora/Ubuntu/Debian...
+However, when working on collaborative projects, some people may use different OSs, so the documents 
+they produce will probably employ different fonts.
+
+Here are some instructions on how to install fonts and also how to increase the compatibility:
+ - [Installing Fonts](Fonts.md)
+
+## Gnome Extensions
  - [Tray Icons Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
  - [Tweaks in System Menu](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
  - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
@@ -45,11 +44,11 @@ EOF
  - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
  - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
  
-### Gnome Shortcuts
+## Gnome Shortcuts
 ```
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Gnome Terminal'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'gnome-terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'ptyxis'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Control><Alt>t'
 ```
 
@@ -77,17 +76,6 @@ echo '    echo $ENTRY | /usr/bin/bibtool' >> ~/.bashrc
 echo '}' >> ~/.bashrc
 echo '' >> ~/.bashrc
 source .bashrc 
-```
-
-### Installing Meslo Fonts
-```
-mkdir -p ~/Downloads/Fonts && cd ~/Downloads/Fonts/
-curl -fLO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.tar.xz
-tar -xf Meslo.tar.xz -C ./meslo
-sudo mv meslo /usr/share/fonts/
-sudo chown -R root:root /usr/share/fonts/meslo
-sudo chmod 755 /usr/share/fonts/meslo
-sudo chmod 644 /usr/share/fonts/meslo/*.ttf 
 ```
 
 ## Java
