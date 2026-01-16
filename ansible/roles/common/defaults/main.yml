@@ -15,6 +15,7 @@ common:
     - gcc 
     - gcc-c++ 
     - gzip
+    - intel-media-driver
     - kernel-devel
     - libffi-devel
     - make 
